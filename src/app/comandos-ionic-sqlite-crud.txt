@@ -1,0 +1,29 @@
+ionic-sqlite-crud
+
+* Crear proyecto comandos usados:
+> ionic start ionic-sqlite-crud blank --type=angular
+> npm install -g @ionic/cli
+> cd ionic-sqlite-crud
+-----------------------------------------------------------
+* Crear páginas de create y edit:
+> ionic generate page create
+> ionic g page edit
+-----------------------------------------------------------
+* instalar los complementos de núcleo nativo SQLite más Ionic:
+> npm install @ionic-native/sqlite
+> npm i cordova-sqlite-storage
+> npm i @ionic-native/core
+----------------------------------------------------------
+* app.module.ts
+// plugins
+import { SQLite } from '@ionic-native/sqlite/ngx';
+providers: [SQLite]
+* creando el servicio crud
+> ionic g service crud
+* crud.service.ts
+import { Platform } from '@ionic/angular';
+import { SQLite, SQLiteObject } from '@ionic-native/sqlite/ngx';
+constructor(private platform: Platform,private sqlite: SQLite) { }
+
+
+
